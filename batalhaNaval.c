@@ -12,22 +12,37 @@ int main() {
     }
 
     // Navios
-    int navioHorizontal[3] = {3,3,3};
-    int navioVertical[3]   = {3,3,3};
+    int navio[3] = {3,3,3};
+
 
     // Posições iniciais
     int linhaH = 2, colunaH = 4;
     int linhaV = 6, colunaV = 1;
+    int linhaD1 = 0, colunaD1 = 0;
+    int linhaD2 = 0, colunaD2 = 9;
 
     // Coloca navio horizontal
     for (int i = 0; i < 3; i++) {
-        tabuleiro[linhaH][colunaH + i] = navioHorizontal[i];
+        tabuleiro[linhaH][colunaH + i] = navio[i];
     }
 
     // Coloca navio vertical
     for (int i = 0; i < 3; i++) {
-        tabuleiro[linhaV + i][colunaV] = navioVertical[i];
+        tabuleiro[linhaV + i][colunaV] = navio[i];
     }
+
+    // Coloca navio Diagonal principal
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[linhaD1 + i][colunaD1 + i] = navio[i];
+    }
+    
+    // Coloca Navio Diagonal invertida
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[linhaD2 + i][colunaD2 - i] = navio[i];
+    }
+    
 
     // Exibe tabuleiro
     printf("   ");
